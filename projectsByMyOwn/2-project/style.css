@@ -1,0 +1,96 @@
+/* ** changing global variables ** */
+
+.btn {
+    background: transparent;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: var(--primary);
+    opacity: 0.4;
+}
+
+/* ** changing global variables ** */
+
+
+.tabs {
+    padding-top: 20px;
+}
+
+.content {
+    max-width: 700px;
+    background: rgb(176, 253, 242);
+    padding: 0 70px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin: 0 auto;
+
+}
+
+.content-text {
+    display: block;
+    line-height: 1.5;
+}
+
+
+
+/* Content display none  */
+
+.content-item {
+    display: none;
+}
+
+/* Active content display block */
+.content-item__active {
+    display: block;
+    margin-top: 20px;
+}
+
+
+.content {
+    width: max-content;
+}
+
+.content-btn {
+    background: #000;
+    border-radius: 10px;
+    margin-top: -20px;
+}
+
+
+
+main {
+    background: #000;
+    color: rgb(150, 150, 150);
+    padding: 50PX 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: max-content;
+    width: 100%;
+    max-width: 100%;
+}
+
+.content-list {
+    border: 2px dashed white;
+    padding: 20px;
+    margin: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+#move {
+    width: max-content;
+}
+
+#target {
+    border: 2px white dotted;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}

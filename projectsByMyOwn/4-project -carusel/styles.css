@@ -1,0 +1,76 @@
+.slider {
+  max-width: 500px;
+  height: 200px;
+  margin: 5rem auto;
+}
+.slider-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slider-inner__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 1s;
+}
+/*  buttons  */
+.slider-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+/* ** Slider dots */
+.slider-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-dot > span {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #000;
+  margin: 0 15px;
+  cursor: pointer;  transition: 0.5s;
+}
+.slider-dot > span:hover {
+  opacity: 0.6;
+  background-color: var(--primary);
+  transition: 0.5s;
+}
+.slider-dot > span.active {
+  width: 2rem;
+  height: 2rem;
+  background: var(--primary);
+}
+/* 
+.slider-dot li {
+  font-size: 3rem;
+  list-style-type: circle;
+
+  max-width: max-content;
+}
+.slider-dot li.active {
+  list-style-type: disc;
+  font-size: 4rem;
+  position: relative;
+}
+.slider-dot li.active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background: red;
+} */

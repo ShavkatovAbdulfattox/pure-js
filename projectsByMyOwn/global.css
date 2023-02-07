@@ -1,0 +1,104 @@
+/*  Global css variables */
+
+:root {
+  --blue-light: hsl(180deg, 65%, 52%);
+  --white: hsl(180deg, 0%, 92%);
+  --primary: rgb(16, 80, 255);
+  --danger: hsl(0deg 100% 50%);
+  --success: hsl(120deg 100% 50%);
+  --black: hsl(0deg 0% 0%);
+  --grey: hsl(30deg 0% 50%);
+  --light-white-grey: hsl(30deg 0% 80%);
+  --light-grey: hsl(30deg 0% 50%);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: hsl(180deg, 25%, 92%);
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  /* font-family: "Poppins", sans-serif; */
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*
+  A utility class to totally remove something from the screen,
+  while still keeping it available for screen-readers.
+*/
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.helloJs {
+  color: white;
+  display: inline-block;
+  padding: 0.5rem;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: hsl(50deg, 100%, 60%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 1rem;
+  font-weight: 800;
+  /* display: inline-block; */
+}
+
+h1 {
+  text-transform: capitalize;
+  text-align: center;
+} 
+
+.btn-primary {
+  background: var(--primary) !important;
+}
+
+.btn-success {
+  background: var(--success) !important;
+}
+
+.btn-danger {
+  background: var(--danger) !important;
+}
+
+.btn {
+  display: inline;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 5px 11px;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: var(--white);
+  outline: var(--white);
+  outline-offset: 5px;
+  border: none;
+}
+
+.btn:active {
+  opacity: 0.8;
+}

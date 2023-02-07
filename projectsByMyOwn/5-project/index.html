@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="blur"></div>
+      <div class="wrapper">
+        <div class="parent">
+          <h1>Surah <span class="helloJs">JS</span></h1>
+        </div>
+
+        <div class="content">
+          <video
+            src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/audio-wave-5692234-4798534.mp4"
+            autoplay="autoplay"
+            muted="muted"
+            loop="loop"
+            playsinline=""
+            type="video/mp4"
+            style="width: 100%; height: 100px; margin-bottom: 2rem"
+          ></video>
+          <audio src="5026165044.mp3"></audio>
+          <div class="content-btn">
+            <button class="btn skipBack btn-active">Skip Back</button>
+            <button class="btn play">Play</button>
+            <button class="btn stop">Stop</button>
+            <button class="btn skip">Skip Forward</button>
+          </div>
+          <div class="seekbar">
+            <input type="range" id="seek" value="0" max="" />
+          </div>
+          <br />
+          <div class="volume_controls">
+            <button id="mute">
+              <i class="fa fa-volume-up"></i>
+            </button>
+            <input
+              type="range"
+              id="volume"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+            />
+          </div>
+          <h4 id="time">00</h4>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
