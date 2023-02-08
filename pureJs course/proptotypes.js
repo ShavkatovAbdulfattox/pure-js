@@ -13,6 +13,9 @@ const newArray = (arr) => {
 };
 
 newArray(arr);
+
 Array.prototype.multiBy = function (n) {
   return this.map((arr) => arr * n);
 };
+
+
