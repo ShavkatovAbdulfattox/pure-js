@@ -39,3 +39,27 @@ function Car(model, year) {
 
 const mercedes = Car("Mercedes Benz", 1940);
 mercedes.info();
+console.log(Object);
+
+// object literal
+const obj = {
+  name: "abdul",
+  age: 45,
+  isSpeaking: true,
+};
+
+const car = new Object();
+car.name = "mercedes";
+car.year = 1885;
+console.log(car);
+
+obj.getOwnProperty();
+
+// !
+const person = new Object();
+person.age = 45;
+person.voice = () => {
+  console.log(this);
+  console.log(`My age is ${this.age}`);
+};
+person.voice();

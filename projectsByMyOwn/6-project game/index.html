@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Hello <span class="helloJs">js</span></h1>
+      <div class="container">
+        <section class="player player-0 player-active">
+          <h2>PLAYER 1</h2>
+          <p class="score" id="score--1">0</p>
+          <div class="current">
+            <h3>CURRENT</h3>
+            <h4 id="current-scrore-first">0</h4>
+          </div>
+        </section>
+        <div id="dice-buttons" class="buttons">
+          <button class="btn btn-primary">New game</button>
+          <button class="btn btn-danger">roll dice</button>
+          <button class="btn btn-success">hold</button>
+        </div>
+        <section class="player">
+          <h2>PLAYER 2</h2>
+          <p class="score" id="score--2">0</p>
+          <div class="current">
+            <h3>CURRENT</h3>
+            <h4 id="current-scrore-second">0</h4>
+          </div>
+        </section>
+      </div>
+      <div class="game-img">
+        <!-- <img src="images/inverted-dice-1.png" alt="" class="first" /> -->
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
