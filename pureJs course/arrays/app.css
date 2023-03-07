@@ -1,0 +1,41 @@
+.app {
+  position: relative;
+  min-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  /* grid-template-rows: auto repeat(3, 15em) auto; */
+  gap: 2rem;
+
+  /*  * Creates fade in / out animation */
+  opacity: 0;
+  transition: all 1s;
+}
+.movements__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 1rem 2rem;
+  max-width: 400px;
+  border-radius: 1rem;
+}
+.movements__value {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+.movements__type {
+  border-radius: 1rem;
+  padding: 5px 10px;
+  color: white;
+  font-size: 1.5rem;
+}
+.movements__type--deposit {
+  background: var(--success);
+}
+.movements__type--withdraw {
+  background: var(--danger);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../projectsByMyOwn/global.css" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <p class="welcome">Log in to gwt started</p>
+      <form action="" class="login">
+        <input
+          type="text"
+          placeholder="user"
+          class="login__input login__input--user"
+        />
+
+        <input
+          type="text"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">&rarr;</button>
+      </form>
+    </nav>
+    <main class="app">
+      <div class="balance">
+        <div>
+          <p class="balance__label">Current balance</p>
+          <p class="balance__date">
+            As of <span class="date">50/03/2037</span>
+          </p>
+        </div>
+        <p class="balance__value">0000€</p>
+      </div>
+    </main>
+    <!--  MOVEMENTS -->
+
+    <div class="movements">
+      <div class="movements__row">
+        <div class="movements__type movements__type--deposit">2 deposit</div>
+        <div class="movements__date">3 days ago</div>
+        <div class="movements__value">4 000$</div>
+      </div>
+
+      <div class="movements__row">
+        <div class="movements__type movements__type--withdraw">1 withdraw</div>
+        <div class="movements__date">24/01/2037</div>
+        <div class="movements__value">-378$</div>
+      </div>
+    </div>
+
+    <script src="arr-03.js"></script>
+  </body>
+</html>
