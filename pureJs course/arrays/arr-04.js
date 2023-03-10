@@ -14,5 +14,7 @@ const deposit = movements.filter((mov) => mov > 0);
 console.log(deposit);
 
 // ! reduce
-const balance = movements.reduce((acc, i, arr) => {}, []); // The first paramet is the accumalator => it is like snow ball
-console.log();
+const balance = movements.reduce((acc, cur, i, arr) => {
+  return (acc += cur);
+}, 0); // The first paramet is the accumalator => it is like snow ball
+console.log(balance);
