@@ -31,11 +31,27 @@ const accounts = [account1, account2, account3, account4];
 const labelWelcome = document.querySelector(".welcome");
 const labelData = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
-const labelSumIn = document.querySelector(".balance__value--in");
-const labelSumOut = document.querySelector(".balance__value--out");
-const labelSumInterest = document.querySelector(".balance__value--interest");
+const labelSumIn = document.querySelector(".summary__value--in");
+const labelSumOut = document.querySelector(".summary__value--out");
+const labelSumInterest = document.querySelector(".summary__value--interest");
+
 const containerApp = document.querySelector(".app");
 const containerMovements = document.querySelector(".movements");
+
+const btnLogin = document.querySelector(".login__btn");
+const btnTransfer = document.querySelector(".transfer__btn");
+const btnClose = document.querySelector(".close__btn");
+const btnLoan = document.querySelector(".loan__btn");
+
+const inputLoginUserName = document.querySelector(".login__input--user");
+const inputLoginPin = document.querySelector(".login__input--pin");
+const inputTransferTo = document.querySelector(".transfer__input--pin");
+const inputTransferAmount = document.querySelector(".transfer__input--amount");
+const inputCloseName = document.querySelector(".close__input--name");
+const inputClosePin = document.querySelector(".close__input--pin");
+const inputLoan = document.querySelector(".loan__input--money");
+
+// const inputLoginUserName = document.querySelector(".login__input--user");
 
 const displayMovements = (movements) => {
   containerMovements.innerHTML = "";
@@ -54,10 +70,33 @@ const displayMovements = (movements) => {
   });
 };
 
-displayMovements(account1.movements);
+const calcDisplayBalance = (acc) => {
+  acc.balance = acc.movements.reduce((acc, mov) => {
+    return acc + mov;
+  }, 0);
+  labelBalance.textContent = `${acc.balance} EUR`;
+};
+
+const calcDisplaySummary = (acc) => {
+  const incomes = acc.movements
+    .filter((mov) => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes} EUR`;
+  const out = acc.movements
+    .filter((mov) => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(out)} EUR`;
+  const interest = acc.movements
+    .filter((mov) => mov > 0)
+    .map((deposit, i, arr) => (deposit * acc.interestRate) / 100)
+    .filter((int, i, arr) => {
+      return int >= 1;
+    })
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumInterest.textContent = `${interest.toFixed(2)} EUR`;
+};
 
 const createUserName = (accs) => {
-  console.log(accs);
   accs.forEach((acc) => {
     acc.username = acc.owner
       .toLowerCase()
@@ -66,25 +105,88 @@ const createUserName = (accs) => {
       .join("");
   });
 };
+createUserName(accounts);
 
-console.log(createUserName(accounts));
-
-// Coding challenge
-
-const checkDogs = (dogsJulia, dogsKate) => {
-  const arr = [...dogsJulia];
-  arr.pop();
-  arr.shift();
-  const bothArr = [...arr, dogsKate];
-  bothArr.forEach((age, i) => {
-    if (age > 3) {
-      console.log(`Dog number ${i} is an adult, and is ${age}years old`);
-    } else {
-      console.log(`Dog number ${i} is still puppy 🐶image.png`);
-    }
-  });
+const updateUi = (currentAccount) => {
+  // Display movements
+  displayMovements(currentAccount.movements);
+  // Display balance
+  calcDisplayBalance(currentAccount);
+  // Display summary
+  calcDisplaySummary(currentAccount);
 };
 
-checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// Event handler
+let currentAccount;
 
-// TEST DATA 1: Julia's data [3,5,2,12,7], Kate's data [4,1,15,8,3]
+btnLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUserName.value
+  );
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and welcome message
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.style.opacity = 100;
+    // Clear input fields
+    inputLoginUserName.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
+    updateUi(currentAccount);
+  }
+});
+
+btnTransfer.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    (acc) => acc.username === inputTransferTo.value
+  );
+  inputTransferTo.value = inputTransferAmount.value = "";
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    updateUi(currentAccount);
+  }
+});
+btnClose.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // const user = accounts.find((acc) => acc.username === inputCloseName.value);
+  // console.log(user);
+  if (
+    currentAccount.username === inputCloseName.value &&
+    currentAccount.pin === Number(inputClosePin.value)
+  ) {
+    const index = accounts.findIndex(
+      (acc) => acc.username === currentAccount.username
+    );
+    accounts.splice(index, 1);
+    containerApp.style.opacity = 0;
+  }
+  inputCloseName.value = inputClosePin.value = "";
+});
+
+btnLoan.addEventListener("click", (e) => {
+  e.preventDefault();
+  const amount = Number(inputLoan.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov > amount * 0.1)
+  ) {
+    inputLoan.value = "";
+    currentAccount.movements.push(amount);
+    updateUi(currentAccount);
+  }
+});
