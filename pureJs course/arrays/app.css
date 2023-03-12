@@ -160,3 +160,35 @@ nav {
   font-weight: 900;
   cursor: pointer;
 }
+/* summary */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary__value {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary__value--interest {
+  color: var(--success);
+  margin-top: 1em;
+}
+
+.summary__value--in {
+  margin-top: 1em;
+  color: var(--success);
+}
+.summary__value--out {
+  margin-top: 1em;
+  color: var(--danger);
+}
+.btn__sort {
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 12px;
+}

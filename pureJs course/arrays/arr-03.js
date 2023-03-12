@@ -42,6 +42,7 @@ const btnLogin = document.querySelector(".login__btn");
 const btnTransfer = document.querySelector(".transfer__btn");
 const btnClose = document.querySelector(".close__btn");
 const btnLoan = document.querySelector(".loan__btn");
+const btnSort = document.querySelector(".sort__btn");
 
 const inputLoginUserName = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
@@ -53,9 +54,13 @@ const inputLoan = document.querySelector(".loan__input--money");
 
 // const inputLoginUserName = document.querySelector(".login__input--user");
 
-const displayMovements = (movements) => {
+const displayMovements = (movements, sort = false) => {
+  const sortedMovements = sort
+    ? movements.slice().sort((a, b) => a - b)
+    : movements;
+
   containerMovements.innerHTML = "";
-  movements.forEach((mov, i) => {
+  sortedMovements.forEach((mov, i) => {
     const type = mov > 0 ? "deposit" : "withdraw";
 
     const html = `
@@ -189,4 +194,10 @@ btnLoan.addEventListener("click", (e) => {
     currentAccount.movements.push(amount);
     updateUi(currentAccount);
   }
+});
+let sorted = false;
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
