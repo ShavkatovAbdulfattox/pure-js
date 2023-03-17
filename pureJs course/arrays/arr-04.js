@@ -177,3 +177,34 @@ number.sort((a, b) => {
   if (a < b) return 1;
 });
 console.log(number);
+
+// ! Fill method in js => this method works almost like slice
+// Definition and Usage
+
+// The Array.from() method returns an array from any object with a length property.
+
+// The Array.from() method returns an array from any iterable object.
+// Array.from()
+
+// Array.from() is a static property of the JavaScript Array object.
+
+// You can only use it as Array.from().
+
+// Using x.from(), where x is an array will return undefined.
+
+const Arr = new Array(7);
+
+Arr.fill(1, 3, 5);
+console.log(Arr);
+
+// ! Array constructor from
+const y = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(y);
+// const numbers = [175, 50, 25];
+
+// console.log();
+// numbers.reduce(myFunc)
+// function myFunc(total, num) {
+//   console.log(total);
+//   return total - num;
+// }
