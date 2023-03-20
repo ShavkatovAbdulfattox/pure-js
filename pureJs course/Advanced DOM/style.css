@@ -1,0 +1,93 @@
+/* ! this is global  */
+ul > li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: currentColor;
+}
+.d-flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.center {
+  justify-content: center;
+}
+.a-center {
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.nav--links {
+  display: flex;
+}
+.nav--link {
+  margin-left: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--grey);
+}
+header {
+  height: 30rem;
+  background: var(--success);
+  display: grid;
+  place-items: center;
+}
+section {
+  height: 500px;
+}
+.section-1 {
+  background: var(--primary);
+  color: white;
+  opacity: 0.5;
+}
+.section-2 {
+  background: var(--danger);
+  color: white;
+  opacity: 0.5;
+}
+.section-3 {
+  background: var(--grey);
+
+  color: white;
+  opacity: 0.5;
+}
+
+.tab-container button:not(:first-of-type) {
+  margin-left: 20px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.tab-content {
+  font-size: 1.3rem;
+  width: 80%;
+  background: #000;
+  padding: 80px 30px;
+  border-radius: 1rem;
+  text-align: center;
+  display: none;
+}
+/*! active tab  */
+.t-active {
+  display: block;
+}
+.btn-active {
+  /* margin-top: -20px; */
+  transform: translateY(-0.5em);
+  transition: 0.5s;
+  background: var(--success) !important;
+}

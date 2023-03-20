@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../projectsByMyOwn/global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Advanced Dom</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header-content">
+          <h1>Hello World!</h1>
+          <ul class="nav--links">
+            <a href="#section-1" class="nav--link">section 1</a
+            ><a href="#section-2" class="nav--link">section 2</a
+            ><a href="#section-3" class="nav--link">section 3</a>
+          </ul>
+          <button class="down btn btn-primary">Click me !</button>
+        </div>
+      </header>
+      <main>
+        <section class="section-1" id="section-1">
+          <h2>Section 1</h2>
+        </section>
+        <section class="section-2" id="section-2">
+          <h2>Section 2</h2>
+          <div class="tab">
+            <div class="tab-container d-flex center">
+              <button class="btn btn-primary btn-active" data-tab="1">
+                Tab <span>1 </span>
+              </button>
+              <button class="btn btn-primary" data-tab="2">
+                Tab <span> 2</span>
+              </button>
+              <button class="btn btn-primary" data-tab="3">
+                Tab <span>3</span>
+              </button>
+            </div>
+            <div class="content">
+              <p class="tab-content t-order--1 t-active">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Molestias, omnis iste nihil a esse ipsum vel non quibusdam
+                itaque totam sint beatae officiis laboriosam modi eius facere
+                aut incidunt natus.
+              </p>
+              <p class="tab-content t-order--2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                tempora sed aliquid. Minus eum ut repellendus deleniti? Animi
+                unde in omnis eligendi perferendis temporibus quo iure, maiores
+                nisi eum voluptates.
+              </p>
+              <p class="tab-content t-order--3">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus,
+                quaerat doloribus? Eius qui deserunt natus minima iure iste
+                eveniet nam quis nesciunt ad, porro voluptas consectetur placeat
+                fuga totam? Voluptatibus?
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="section-3" id="section-3">
+          <h2>Section 3</h2>
+        </section>
+        <section class="section-2">
+          <h2>Section 2</h2>
+        </section>
+        <section class="section-3">
+          <h2>Section 3</h2>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
