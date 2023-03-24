@@ -1,0 +1,224 @@
+/*  ====================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat+Alternates:ital,wght@1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Lato&family=Montserrat+Alternates:ital,wght@1,900&display=swap");
+/*  ====================================== */
+
+/* default bg =============  */
+.black {
+  background: #000 !important;
+}
+.gold {
+  background: goldenrod !important;
+}
+.red {
+  background: orangered !important;
+}
+.blueviolet {
+  background: blueviolet !important;
+}
+
+/* default bg  ==================== */
+.header__tabs--content {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.header--tab {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5em;
+  margin-right: 1rem;
+  letter-spacing: 2px;
+}
+.header--tab:last-of-type {
+  margin-right: 0;
+}
+.header--tab.active {
+  background: #666 !important;
+  transform: translateY(-8px);
+  transition: 0.5s;
+  padding: 0.6rem 1.1rem;
+  font-size: 1.4rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+.nav__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__form form {
+  display: flex;
+}
+.nav__input {
+  border: none;
+  border-radius: 0.5em;
+  padding: 1rem;
+}
+.nav__input::placeholder {
+  font-size: 1.1rem;
+}
+.nav__input--enter {
+  /* height: 70px; */
+  font-weight: 500;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+.user__left--information {
+  max-width: 40%;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 1.5rem;
+}
+
+.user__left--img {
+  max-width: 100%;
+  /* width: 50%; */
+}
+.user__right--information {
+  width: 55%;
+  max-width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.user__left--desc h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+}
+
+.user__left--desc h3 span {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.model-name {
+  text-align: center;
+  font-weight: 600;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 2px;
+}
+
+.user--photo {
+  width: 6rem;
+  height: 6rem;
+  background: var(--grey);
+  border-radius: 50%;
+  /* filter: blur(3px); */
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.user--desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4.5rem;
+}
+.user--desc__detail h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.user--desc__detail h2 span {
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.user__date {
+  position: absolute;
+  bottom: 1rem;
+  /* right: 1rem; */
+  background: rgb(136, 43, 9);
+  width: 100%;
+  margin: -1.5rem;
+  border-radius: 0.5em;
+  color: var(--white);
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  padding: 1.5rem;
+}
+.user__date h2 {
+  text-align: end;
+  /* font-weight: 400; */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-align: left;
+  margin: 0;
+}
+.user__date p {
+  font-size: 1.4rem;
+  text-align: end;
+  margin: 0;
+}
+.user__responsible h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user__responsible h3 span {
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.imei {
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: rgb(136, 43, 9);
+}
+.user--important__informations h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #363636;
+  color: var(--white);
+  border-radius: 0.5em;
+  padding: 0.5rem;
+}
+.user--important__informations h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user--important__informations h3 span {
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}

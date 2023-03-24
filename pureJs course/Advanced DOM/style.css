@@ -28,6 +28,11 @@ a {
   align-items: center;
   flex-direction: column;
 }
+.header-content.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 .nav--links {
   display: flex;
 }
@@ -44,6 +49,11 @@ header {
 }
 section {
   height: 500px;
+  transition: 0.5s;
+}
+.hidden-section {
+  opacity: 0 !important;
+  transform: translateY(8rem);
 }
 .section-1 {
   background: var(--primary);
@@ -90,4 +100,26 @@ section {
   transform: translateY(-0.5em);
   transition: 0.5s;
   background: var(--success) !important;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+.slide__btn {
+  position: relative;
+  bottom: 0;
+}
+.slide {
+  position: absolute;
+  transition:  0.7s;
+}
+.testimonial__header {
+  font-size: 1.5rem;
+  color: var(--success);
+  text-align: center;
+}
+.testimonial__text {
+  text-align: justify;
+  font-size: 1.2rem;
 }
