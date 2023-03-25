@@ -33,12 +33,14 @@
   border-radius: 0.5em;
   margin-right: 1rem;
   letter-spacing: 2px;
+  /* opacity: 0.7; */
 }
 .header--tab:last-of-type {
   margin-right: 0;
 }
 .header--tab.active {
-  background: #666 !important;
+  background: #0f0f0f !important;
+  /* opacity: 1; */
   transform: translateY(-8px);
   transition: 0.5s;
   padding: 0.6rem 1.1rem;

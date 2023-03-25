@@ -83,7 +83,7 @@ const data = [
             consumption: 0,
             percent: 20,
             term: 4,
-            image: "https://cdn.macbro.uz/macbro/d35cfadb-2308-42fe-b7f5-da7dd24a4b74",
+            image: "https://cdn.macbro.uz/macbro/397b968b-7ae8-44e7-9336-dd04b7440bb1",
             calcWentOutAmount() {
                 return this.realPrice - this.givenMoney + this.consumption
             },
@@ -189,56 +189,19 @@ const colors = {
     black: "black"
 
 }
+let categoryName = "";
 // ================
 
 // ** functions **
 
 
-const createTabs = (data) => {
-    const tabsName = data.map(data => {
-        const { product } = data
-        const model = product.model.slice(0, 9);
-        return model
-    })
-    // const 
-    for (const [key, tab] of Object.entries([...new Set(tabsName)])) {
-        const buttons = tabContainer.insertAdjacentHTML("beforeend", `<button class="btn-primary header--tab ${+key === 0 ? "active" : ""
-            } ">${tab.toUpperCase()}</button>`)
-    }
 
-
-
-}
-createTabs(data)
 
 // fetching data
 const fetchData = (data) => {
 
-    const setBackground = (productName) => {
-        const name = productName.slice(0, 9).toLowerCase();
-        let color
-        // console.log(name);
-        switch (name) {
-            case "iphone 11":
-                color = colors.black
-                break;
-            case "iphone 12":
-                color = colors.red
-                break;
-            case "iphone 13":
-                color = colors.gold
-                break;
+    data.map(data => {
 
-            default:
-                color = colors.violet
-                break;
-
-        }
-        // console.log(color);
-        // let color = "red"
-        return color
-    }
-    data.forEach(data => {
         const { id, pin, name, date, phoneNumber, product, responsiblePerson } = data;
 
 
@@ -253,8 +216,8 @@ const fetchData = (data) => {
 
 
         const userInformation = `
-        <section class="user">
-        <div class="user__left--information">
+            <section class="user">
+            <div class="user__left--information">
           <img
             src="${product.image}"
             alt="${product.model}"
@@ -287,8 +250,8 @@ const fetchData = (data) => {
         </div >
     <div class="user__right--information">
         <h2 class="model-name ${setBackground(product.model)}">Foydalanuvchini ma'lumotlari</h2>
-        <div class="user--desc">
-            <div class="user--photo">ID${id}</div>
+        <div class="user--desc ">
+            <div class="user--photo ${setBackground(product.model)}">ID${id}</div>
             <div class="user--desc__detail">
                 <h2>
                     Foydalanuvchi ismi: <span class="user--name">${name.split(" ")[0].toUpperCase()}</span>
@@ -327,8 +290,107 @@ const fetchData = (data) => {
       </section >
     `
         main.insertAdjacentHTML("afterbegin", userInformation)
+
     });
 }
-fetchData(data)
+function setBackground(productName) {
+    const name = productName.slice(0, 9).toLowerCase();
+    let color
+    // console.log(name);
+    switch (name) {
+        case "iphone 11":
+            color = colors.black
+            break;
+        case "iphone 12":
+            color = colors.red
+            break;
+        case "iphone 13":
+            color = colors.gold
+            break;
+
+        default:
+            color = colors.violet
+            break;
+
+    }
+    // console.log(color);
+    // let color = "red"
+    return color
+}
+
+const createTabs = (data) => {
+    const tabsName = data.map(data => {
+        const { product } = data
+        const model = product.model.slice(0, 9);
+        return model
+    })
+
+    for (const [key, tab] of Object.entries(['all', ...new Set(tabsName)])) {
+        tabContainer.insertAdjacentHTML("beforeend", `<button class="btn-primary header--tab ${+key === 0 ? "active" : ""
+            }" data-id="${key}">${tab.toUpperCase()}</button>`)
+    }
+    const buttons = document.querySelectorAll(".header--tab")
+    buttons.forEach(btn => {
+        const isActive = btn.classList.contains("active")
+        if (!isActive) return
+        const filteredData = data.filter(data => data.product.model.toLowerCase().includes(btn.textContent.toLowerCase()));
+
+        fetchData(data)
+
+    })
+}
+createTabs(data)
+
+const activeButton = (e) => {
+
+    const buttons = document.querySelectorAll(".header--tab");
+    let target = e.target.textContent.toLowerCase()
+    // guard 
+    if (!e.target.classList.contains("header--tab")) return
+    // remove active class
+    buttons.forEach(btn => {
+        btn.classList.remove("active")
+        // e.target.dataset.id
+    })
+    // add active class
+    e.target.classList.add("active")
+    categoryName = target
 
 
+    // let newData = data.filter(data => data.product.model.includes(target))
+
+}
+
+
+// Events 
+tabContainer.addEventListener("click", (e) => {
+    activeButton(e)
+
+    if (!e.target.classList.contains("header--tab")) return
+    const userInformation = document.querySelectorAll(".user");
+
+
+    if (!e.target.classList.contains("active")) {
+        console.log(true);
+    }
+    userInformation.forEach(product => {
+        product.remove()
+    })
+    const filteredData = data.filter(dat => dat.product.model.toLowerCase().includes(categoryName));
+    if (filteredData.length === 0) {
+        fetchData(data)
+        return
+    }
+    fetchData(filteredData)
+    // if (filteredData) {
+    //     setTimeout(() => { fetchData(filteredData || data) }, 100)
+    //     console.log(true);
+    // }else{
+    //     console.log(false);
+    // }
+
+
+
+
+
+})
