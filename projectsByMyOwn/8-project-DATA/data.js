@@ -110,7 +110,7 @@ const data = [
         name: "sirdaryo",
         date: new Date("2023,1,23"),
         phoneNumber: "911006650",
-        product: {
+        product: { 
             model: "Iphone 13 Max",
             realPrice: 1120,
             givenMoney: 500,
