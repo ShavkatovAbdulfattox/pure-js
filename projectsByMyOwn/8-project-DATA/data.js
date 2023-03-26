@@ -202,94 +202,95 @@ const fetchData = (data) => {
 
     data.map(data => {
 
-        const { id, pin, name, date, phoneNumber, product, responsiblePerson } = data;
+        const { id, name, date, phoneNumber, product, responsiblePerson } = data;
+
+        const userName = `<h1>${name}</h1>`
+        main.insertAdjacentHTML("afterbegin", userName)
+        //     const options = {
+
+        //         day: "numeric",
+        //         month: "long", // 2-digit
+        //         year: "numeric", // 2-digit
+        //         weekday: "long"
+        //     }
+        //     const formattedDate = new Intl.DateTimeFormat("uz", options).format(date)
 
 
-        const options = {
+        //     const userInformation = `
+        //         <section class="user">
+        //         <div class="user__left--information">
+        //       <img
+        //         src="${product.image}"
+        //         alt="${product.model}"
+        //         class="user__left--img"
+        //       />
 
-            day: "numeric",
-            month: "long", // 2-digit
-            year: "numeric", // 2-digit
-            weekday: "long"
-        }
-        const formattedDate = new Intl.DateTimeFormat("uz", options).format(date)
+        //       <div class="user__left--desc">
+        //         <h2 class="model-name ${setBackground(product.model)}">${product.model.toUpperCase()}</h2>
+        //         <h3 class="model">
+        //           Olingan narxi :
+        //           <span class="price">${product.realPrice} $</span>
+        //         </h3>
+        //         <h3 class="model">
+        //           Rasxod :
+        //           <span class="price">${product.consumption} $</span>
+        //         </h3>
+        //         <h3 class="model">
+        //           Berilgan narxi :
+        //           <span class="given-money">${product.givenMoney} $</span>
+        //         </h3>
+        //         <h3 class="model">
+        //           Ustiga qoyilgan foiz :
+        //           <span class="price">${product.percent} %</span>
+        //         </h3>
+        //         <h3 class="model">
+        //           Nechi oyga olindi :
+        //           <span class="price">${product.term} oyga</span>
+        //         </h3>
+        //       </div >
+        //     </div >
+        // <div class="user__right--information">
+        //     <h2 class="model-name ${setBackground(product.model)}">Foydalanuvchini ma'lumotlari</h2>
+        //     <div class="user--desc ">
+        //         <div class="user--photo ${setBackground(product.model)}">ID${id}</div>
+        //         <div class="user--desc__detail">
+        //             <h2>
+        //                 Foydalanuvchi ismi: <span class="user--name">${name.split(" ")[0].toUpperCase()}</span>
+        //             </h2>
+        //             <h2>
+        //                 Foydalanuvchi nomeri:
+        //                 <span class="user--phone">+${phoneNumber}</span>
+        //             </h2 >
+        //         </div >
+        //     </div >
 
-
-        const userInformation = `
-            <section class="user">
-            <div class="user__left--information">
-          <img
-            src="${product.image}"
-            alt="${product.model}"
-            class="user__left--img"
-          />
-
-          <div class="user__left--desc">
-            <h2 class="model-name ${setBackground(product.model)}">${product.model.toUpperCase()}</h2>
-            <h3 class="model">
-              Olingan narxi :
-              <span class="price">${product.realPrice} $</span>
-            </h3>
-            <h3 class="model">
-              Rasxod :
-              <span class="price">${product.consumption} $</span>
-            </h3>
-            <h3 class="model">
-              Berilgan narxi :
-              <span class="given-money">${product.givenMoney} $</span>
-            </h3>
-            <h3 class="model">
-              Ustiga qoyilgan foiz :
-              <span class="price">${product.percent} %</span>
-            </h3>
-            <h3 class="model">
-              Nechi oyga olindi :
-              <span class="price">${product.term} oyga</span>
-            </h3>
-          </div >
-        </div >
-    <div class="user__right--information">
-        <h2 class="model-name ${setBackground(product.model)}">Foydalanuvchini ma'lumotlari</h2>
-        <div class="user--desc ">
-            <div class="user--photo ${setBackground(product.model)}">ID${id}</div>
-            <div class="user--desc__detail">
-                <h2>
-                    Foydalanuvchi ismi: <span class="user--name">${name.split(" ")[0].toUpperCase()}</span>
-                </h2>
-                <h2>
-                    Foydalanuvchi nomeri:
-                    <span class="user--phone">+${phoneNumber}</span>
-                </h2 >
-            </div >
-        </div >
-
-        <div class="user__responsible">
-            <h3>
-                <div>
-                    Telefon <b class="imei"><em>imei ID :</em></b>
-                </div>
-                <span class="user__responsible--imei">${responsiblePerson.imei?.split(" ")[1]}</span>
-            </h3>
-            <h3>
-                Telefonga mas'ul odam :
-                <span class="user__responsible--name">${responsiblePerson.name}</span>
-            </h3>
-        </div>
-        <div class="user--important__informations">
-            <h2>muhim ma'lumotlar</h2>
-            <h3>Chiqazilgan summa :<span>${product?.calcWentOutAmount()} $</span></h3>
-            <h3>Jami summa :<span>${product?.calcTotalAmount()}$</span></h3>
-            <h3>Oylik tolov summa :<span>${product?.monthlyPay()}$</span></h3>
-            <h3>Qoldiq tolov summa :<span>${product.remPay()}$</span></h3>
-        </div>
-        <div class="user__date">
-            <h2>Nasiyaga olingan sana 👇</h2>
-            <p>${formattedDate}</p>
-        </div>
-    </div >
-      </section >
-    `
-        main.insertAdjacentHTML("afterbegin", userInformation)
+        //     <div class="user__responsible">
+        //         <h3>
+        //             <div>
+        //                 Telefon <b class="imei"><em>imei ID :</em></b>
+        //             </div>
+        //             <span class="user__responsible--imei">${responsiblePerson.imei?.split(" ")[1]}</span>
+        //         </h3>
+        //         <h3>
+        //             Telefonga mas'ul odam :
+        //             <span class="user__responsible--name">${responsiblePerson.name}</span>
+        //         </h3>
+        //     </div>
+        //     <div class="user--important__informations">
+        //         <h2>muhim ma'lumotlar</h2>
+        //         <h3>Chiqazilgan summa :<span>${product?.calcWentOutAmount()} $</span></h3>
+        //         <h3>Jami summa :<span>${product?.calcTotalAmount()}$</span></h3>
+        //         <h3>Oylik tolov summa :<span>${product?.monthlyPay()}$</span></h3>
+        //         <h3>Qoldiq tolov summa :<span>${product.remPay()}$</span></h3>
+        //     </div>
+        //     <div class="user__date">
+        //         <h2>Nasiyaga olingan sana 👇</h2>
+        //         <p>${formattedDate}</p>
+        //     </div>
+        // </div >
+        //   </section >
+        // `
+        //     main.insertAdjacentHTML("afterbegin", userInformation)
 
     });
 }
