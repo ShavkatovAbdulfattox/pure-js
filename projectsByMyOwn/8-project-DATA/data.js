@@ -14,164 +14,164 @@ const data = [
             consumption: 14,
             term: 4,
             monthlyPay: 250,
-            calcWentOutAmount() {
-                return this.realPrice - this.givenMoney + this.consumption
-            },
-            calcTotalAmount() {
-                let total = (this.realPrice - this.givenMoney + this.consumption)
-                return (total * this.percent / 100) + total
-            },
-            monthlyPay() {
-                return this.calcTotalAmount() / this.term
+            // calcWentOutAmount() {
+            //     return this.realPrice - this.givenMoney + this.consumption
+            // },
+            // calcTotalAmount() {
+            //     let total = (this.realPrice - this.givenMoney + this.consumption)
+            //     return (total * this.percent / 100) + total
+            // },
+            // monthlyPay() {
+            //     return this.calcTotalAmount() / this.term
 
-            },
-            remPay() {
-                let remain = this.calcTotalAmount()
-                return remain
-            }
+            // },
+            // remPay() {
+            //     let remain = this.calcTotalAmount()
+            //     return remain
+            // }
         },
         responsiblePerson: {
             imei: "imei 7311",
             name: "c 49 usmonaka",
         },
     },
-    {
-        id: 1,
-        pin: 2222,
-        name: "Fazliddin",
-        date: new Date("2022,1,22"),
-        phoneNumber: "931035344",
-        product: {
-            model: "Iphone 11 128gb",
-            image: "https://cdn.macbro.uz/macbro/9f8317e9-493a-4c5b-8ccd-19e34f529212",
-            realPrice: 400,
-            givenMoney: 200,
-            consumption: 14,
-            percent: 50,
-            term: 8,
+    // {
+    //     id: 1,
+    //     pin: 2222,
+    //     name: "Fazliddin",
+    //     date: new Date("2022,1,22"),
+    //     phoneNumber: "931035344",
+    //     product: {
+    //         model: "Iphone 11 128gb",
+    //         image: "https://cdn.macbro.uz/macbro/9f8317e9-493a-4c5b-8ccd-19e34f529212",
+    //         realPrice: 400,
+    //         givenMoney: 200,
+    //         consumption: 14,
+    //         percent: 50,
+    //         term: 8,
 
-            calcWentOutAmount() {
-                return this.realPrice - this.givenMoney + this.consumption
-            },
-            calcTotalAmount() {
-                let total = (this.realPrice - this.givenMoney + this.consumption)
-                return (total * this.percent / 100) + total
-            },
-            monthlyPay() {
-                return this.calcTotalAmount() / this.term
-            },
-            remPay() {
-                let remain = this.calcTotalAmount()
-                return remain
-            }
-        },
-        responsiblePerson: {
-            imei: "imei 3515",
-            name: "99 005 53 44"
-        },
-    },
-    {
-        id: 3,
-        pin: 3333,
-        name: "muzap jiyan",
-        date: new Date("2023,1,23"),
-        phoneNumber: "994890070",
-        product: {
-            model: "Iphone 12 128gb",
-            realPrice: 500,
-            givenMoney: 0,
-            consumption: 0,
-            percent: 20,
-            term: 4,
-            image: "https://cdn.macbro.uz/macbro/397b968b-7ae8-44e7-9336-dd04b7440bb1",
-            calcWentOutAmount() {
-                return this.realPrice - this.givenMoney + this.consumption
-            },
-            calcTotalAmount() {
-                let total = (this.realPrice - this.givenMoney + this.consumption)
-                return (total * this.percent / 100) + total
-            },
-            monthlyPay() {
-                return this.calcTotalAmount() / this.term
-            },
-            remPay() {
-                let remain = this.calcTotalAmount()
-                return remain
-            }
-        },
-        responsiblePerson: {
-            imei: "imei 4891",
-            name: "muzap jiyan "
-        },
-    },
-    {
-        id: 4,
-        pin: 4444,
-        name: "sirdaryo",
-        date: new Date("2023,1,23"),
-        phoneNumber: "911006650",
-        product: { 
-            model: "Iphone 13 Max",
-            realPrice: 1120,
-            givenMoney: 500,
-            consumption: 10,
-            percent: 50,
-            term: 8,
-            image: "https://cdn.macbro.uz/macbro/e4574dbe-73d2-4cfb-b5b2-65cd3d149021",
-            calcWentOutAmount() {
-                return this.realPrice - this.givenMoney + this.consumption
-            },
-            calcTotalAmount() {
-                let total = (this.realPrice - this.givenMoney + this.consumption)
-                return (total * this.percent / 100) + total
-            },
-            monthlyPay() {
-                return this.calcTotalAmount() / this.term
-            },
-            remPay() {
-                let remain = this.calcTotalAmount()
-                return remain
-            }
-        },
-        responsiblePerson: {
-            imei: "imei 27913",
-            name: "ozi "
-        },
-    },
-    {
-        id: 5,
-        pin: 5555,
-        name: "islom",
-        date: new Date("2023,1,05"),
-        phoneNumber: "994585900",
-        product: {
-            model: "Iphone 13pro 128",
-            realPrice: 940,
-            givenMoney: 200,
-            consumption: 3,
-            percent: 40,
-            term: 8,
-            image: "https://cdn.macbro.uz/macbro/e4574dbe-73d2-4cfb-b5b2-65cd3d149021",
-            calcWentOutAmount() {
-                return this.realPrice - this.givenMoney + this.consumption
-            },
-            calcTotalAmount() {
-                let total = (this.realPrice - this.givenMoney + this.consumption)
-                return (total * this.percent / 100) + total
-            },
-            monthlyPay() {
-                return this.calcTotalAmount() / this.term
-            },
-            remPay() {
-                let remain = this.calcTotalAmount()
-                return remain
-            }
-        },
-        responsiblePerson: {
-            imei: "imey 25224",
-            name: "fariza ogan "
-        },
-    },
+    //         calcWentOutAmount() {
+    //             return this.realPrice - this.givenMoney + this.consumption
+    //         },
+    //         calcTotalAmount() {
+    //             let total = (this.realPrice - this.givenMoney + this.consumption)
+    //             return (total * this.percent / 100) + total
+    //         },
+    //         monthlyPay() {
+    //             return this.calcTotalAmount() / this.term
+    //         },
+    //         remPay() {
+    //             let remain = this.calcTotalAmount()
+    //             return remain
+    //         }
+    //     },
+    //     responsiblePerson: {
+    //         imei: "imei 3515",
+    //         name: "99 005 53 44"
+    //     },
+    // },
+    // {
+    //     id: 3,
+    //     pin: 3333,
+    //     name: "muzap jiyan",
+    //     date: new Date("2023,1,23"),
+    //     phoneNumber: "994890070",
+    //     product: {
+    //         model: "Iphone 12 128gb",
+    //         realPrice: 500,
+    //         givenMoney: 0,
+    //         consumption: 0,
+    //         percent: 20,
+    //         term: 4,
+    //         image: "https://cdn.macbro.uz/macbro/397b968b-7ae8-44e7-9336-dd04b7440bb1",
+    //         calcWentOutAmount() {
+    //             return this.realPrice - this.givenMoney + this.consumption
+    //         },
+    //         calcTotalAmount() {
+    //             let total = (this.realPrice - this.givenMoney + this.consumption)
+    //             return (total * this.percent / 100) + total
+    //         },
+    //         monthlyPay() {
+    //             return this.calcTotalAmount() / this.term
+    //         },
+    //         remPay() {
+    //             let remain = this.calcTotalAmount()
+    //             return remain
+    //         }
+    //     },
+    //     responsiblePerson: {
+    //         imei: "imei 4891",
+    //         name: "muzap jiyan "
+    //     },
+    // },
+    // {
+    //     id: 4,
+    //     pin: 4444,
+    //     name: "sirdaryo",
+    //     date: new Date("2023,1,23"),
+    //     phoneNumber: "911006650",
+    //     product: {  
+    //         model: "Iphone 13 Max",
+    //         realPrice: 1120,
+    //         givenMoney: 500,
+    //         consumption: 10,
+    //         percent: 50,
+    //         term: 8,
+    //         image: "https://cdn.macbro.uz/macbro/e4574dbe-73d2-4cfb-b5b2-65cd3d149021",
+    //         calcWentOutAmount() {
+    //             return this.realPrice - this.givenMoney + this.consumption
+    //         },
+    //         calcTotalAmount() {
+    //             let total = (this.realPrice - this.givenMoney + this.consumption)
+    //             return (total * this.percent / 100) + total
+    //         },
+    //         monthlyPay() {
+    //             return this.calcTotalAmount() / this.term
+    //         },
+    //         remPay() {
+    //             let remain = this.calcTotalAmount()
+    //             return remain
+    //         }
+    //     },
+    //     responsiblePerson: {
+    //         imei: "imei 27913",
+    //         name: "ozi "
+    //     },
+    // },
+    // {
+    //     id: 5,
+    //     pin: 5555,
+    //     name: "islom",
+    //     date: new Date("2023,1,05"),
+    //     phoneNumber: "994585900",
+    //     product: {
+    //         model: "Iphone 13pro 128",
+    //         realPrice: 940,
+    //         givenMoney: 200,
+    //         consumption: 3,
+    //         percent: 40,
+    //         term: 8,
+    //         image: "https://cdn.macbro.uz/macbro/e4574dbe-73d2-4cfb-b5b2-65cd3d149021",
+    //         calcWentOutAmount() {
+    //             return this.realPrice - this.givenMoney + this.consumption
+    //         },
+    //         calcTotalAmount() {
+    //             let total = (this.realPrice - this.givenMoney + this.consumption)
+    //             return (total * this.percent / 100) + total
+    //         },
+    //         monthlyPay() {
+    //             return this.calcTotalAmount() / this.term
+    //         },
+    //         remPay() {
+    //             let remain = this.calcTotalAmount()
+    //             return remain
+    //         }
+    //     },
+    //     responsiblePerson: {
+    //         imei: "imey 25224",
+    //         name: "fariza ogan "
+    //     },
+    // },
     // https://cdn.macbro.uz/macbro/2accc770-d5f3-4da4-9a5d-7e16423df22c 13 iphone
 ]
 
