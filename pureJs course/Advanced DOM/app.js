@@ -206,7 +206,7 @@ slider()
 
 
 
-document.addEventListener("DOMContentLoaded", (e) => { 
-    
+document.addEventListener("DOMContentLoaded", (e) => {
+
 })
 
