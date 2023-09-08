@@ -1,23 +1,23 @@
 // ! ++++++++++ Strings ++++++++++++++++
 
-// const airline = "Tap Air Uzbekistan";
-// const plane = "B456";
+const airline = "Tap Air Uzbekistan";
+const plane = "B456";
 
-// console.log(airline.indexOf()); // this will return the first index
-// console.log(airline.lastIndexOf()); // this will return the last index
-// console.log(airline.toLowerCase());
-// console.log(airline.toUpperCase());
-// const passenger = "jOnAs",
-//   passengerLower = passenger.toLowerCase();
-// console.log(passengerLower[0].toUpperCase() + passengerLower.slice(1));
+console.log(airline.indexOf()); // this will return the first index
+console.log(airline.lastIndexOf()); // this will return the last index
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+const passenger = "jOnAs",
+  passengerLower = passenger.toLowerCase();
+console.log(passengerLower[0].toUpperCase() + passengerLower.slice(1));
 
-// // Comparing email
-// const email = "hello@mail.ru";
-// const loginEmail = " Hello@mail.Ru \n";
-// const lowerEmail = loginEmail.toLowerCase();
-// const trimEmail = lowerEmail.trim();
+// Comparing email
+const email = "hello@mail.ru";
+const loginEmail = " Hello@mail.Ru \n";
+const lowerEmail = loginEmail.toLowerCase();
+const trimEmail = lowerEmail.trim();
 
-// //  * Slice method => needs indexes as arguments and so therefore sometimes it can be very useful to first figure out the index of part of a string to then extract that
+//  * Slice method => needs indexes as arguments and so therefore sometimes it can be very useful to first figure out the index of part of a string to then extract that
 
 // console.log(airline.slice(4)); // It is position where extraction start and remember that this is zero based so 0 1 2 3 4 // ! this is substring , this does not change the original string, that is because it is impossible to mutate strings they are primitive
 
