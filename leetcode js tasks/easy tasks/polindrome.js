@@ -6,7 +6,7 @@ const isPalindrome = function (x) {
         .reverse()
         .join("")} from left to right and from right to left.`
     );
-  } else if(parseInt(arr.reverse().join("")) !== parseInt(arr.join(""))) {
+  } else if (parseInt(arr.reverse().join("")) !== parseInt(arr.join(""))) {
     console.log(
       `From left to right, it reads ${arr.join(
         ""
