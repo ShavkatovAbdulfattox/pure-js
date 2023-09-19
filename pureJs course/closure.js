@@ -15,11 +15,7 @@ const data = {
 };
 
 const dataFetch = () => {
-   console.log(
-    `The languages : d, ${this.year}, ${
-      this.rate
-    }`
-  );
+  console.log(`The languages : d, ${this.year}, ${this.rate}`);
 };
 bind(data, dataFetch);
 
