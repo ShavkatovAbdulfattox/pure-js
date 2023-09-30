@@ -2,7 +2,7 @@
 
 // ! JavaScript is a high level , object oriented, multi-paradigm programming language
 //  * Garbage-collected
-// TODO : Garbage-collected => this is an algorithm inside of javaScript engine, which automatically removes old unused objects from the computer memory in order not to clog it up with unnecessary stuff
+// TODO : Garbage-collected => this is an algorithm inside of javaScript engine, which removes old unused objects from the computer memory in order not to clog it up with unnecessary stuff
 //  * Multi-paradigm
 /**  
  * A programming paradigm is a way or method in which we write code to solve different types of problems. Since there are a lot of ways to code, there are a lot of programming paradigms that developers use to write code.

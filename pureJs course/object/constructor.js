@@ -5,8 +5,8 @@
  *  * In javaScript constructors gets called when  // ! "new" keyword created
  *  * // ? What happen when constructors get called ?
  *  * The prototype data property of a Function instance is used when the function
- *  * is used as a constructor with the new operator. It will become the new object's prototype.
- *  * // ! A new empty Object is created
+ *  * is used as a constructor with the  new empty Object is creatednew operator. It will become the new object's prototype.
+ *  * // ! A
  *  * // ! The this keyword refers to the new object , and its become current instance object
  *  * // ! The new object is then returned  as the return value of the constructor
  *  * BEST practice object constructors should used by the UpperCamelCase
