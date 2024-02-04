@@ -1,0 +1,28 @@
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+
+// ! First solution
+const removeElement = function (nums, val) {
+  let k = 0;
+  nums.forEach((num) => {
+    if (num != val) {
+      k++;
+    }
+  });
+
+  return k;
+};
+
+// !Second Solution
+// const removeElement = function (nums, val) {
+//   return nums.filter((num) => num != val);
+// };
+
+// Example 1
+const nums1 = [3, 2, 2, 3];
+const val1 = 3;
+const k1 = removeElement(nums1, val1);
+console.log(k1, nums1.slice(0, k1)); // Output: 2 [2, 2]
