@@ -38,3 +38,15 @@ const letterCombinations = function (digits) {
 };
 
 console.log(letterCombinations("23"));
+
+function createAdder(x) {
+  // Your code here
+
+  return function (y) {
+    return x + y;
+  };
+}
+
+const addFive = createAdder(5);
+console.log(addFive(2)); // Logs: 7
+console.log(addFive(10)); // Logs: 15
