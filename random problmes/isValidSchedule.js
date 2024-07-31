@@ -63,3 +63,12 @@ console.log(isValidSchedule(["P1", "D1", "P2", "D2", "P3", "D3"])); // Output: T
 // console.log(isValidSchedule(["P1", "P1", "D1", "D2"])); // Output: False
 // console.log(isValidSchedule(["P1", "D1", "D2", "P2"])); // Output: False
 // console.log(isValidSchedule(["P132", "D132"])); // Output: True
+
+var addBinary = function (a, b) {
+  let s = 0;
+
+  let ax = a.length - 1;
+  console.log(ax.charAt());
+};
+
+addBinary("11", "1");

@@ -88,12 +88,15 @@ const formatMovement = (date, locale) => {
 
 }
 
+
 const formatCur = (value, locale, currency) => {
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: currency
   }).format(value)
 }
+
+
 
 const displayMovements = (acc, sort = false) => {
   const sortedMovements = sort
@@ -121,12 +124,14 @@ const displayMovements = (acc, sort = false) => {
   });
 };
 
+
 const calcDisplayBalance = (acc) => {
   acc.balance = acc.movements.reduce((acc, mov) => {
     return acc + mov;
   }, 0);
   labelBalance.textContent = `${formatCur(acc.balance, acc.locale, acc.currency)}`;
 };
+
 
 const calcDisplaySummary = (acc) => {
   const incomes = acc.movements
